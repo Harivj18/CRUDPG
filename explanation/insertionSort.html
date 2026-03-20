@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insertion Sort Visualizer</title>
+  <style>
+    body { font-family: Arial; display: flex; flex-direction: column; align-items: center; }
+    #arrayContainer { display: flex; align-items: flex-end; gap: 6px; height: 200px; margin-top: 30px; }
+    .bar { width: 30px; background: steelblue; color: white; text-align: center; border-radius: 5px 5px 0 0; }
+    .highlight { background: orange; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Insertion Sort Visualizer</h2>
+  <div id="arrayContainer"></div>
+  <button onclick="startSort()">Start Sort</button>
+
+  <script>
+    const array = [8, 3, 5, 4, 6];
+    const container = document.getElementById("arrayContainer");
+
+    function renderArray(highlightIndex = -1) {
+      container.innerHTML = "";
+      array.forEach((value, i) => {
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        if (i === highlightIndex) bar.classList.add("highlight");
+        bar.style.height = value * 20 + "px";
+        bar.textContent = value;
+        container.appendChild(bar);
+      });
+    }
+
+    async function insertionSortVisual() {
+      for (let i = 1; i < array.length; i++) {
+        const key = array[i];
+        let j = i - 1;
+
+        renderArray(i);
+        await sleep(3000);
+
+        while (j >= 0 && array[j] > key) {
+          array[j + 1] = array[j];
+          j--;
+          renderArray(j + 1);
+          await sleep(3000);
+        }
+
+        array[j + 1] = key;
+        renderArray(j + 1);
+        await sleep(3000);
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function startSort() {
+      insertionSortVisual();
+    }
+
+    renderArray();
+  </script>
+</body>
+</html>

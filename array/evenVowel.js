@@ -1,0 +1,1 @@
+console.log("ni".charCodeAt(1) -96)

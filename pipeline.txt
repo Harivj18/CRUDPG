@@ -1,0 +1,29 @@
+1. median of two sorted array
+2. next permutation ----
+3. Min in rotated sorted array ----
+4. k th small / Largest in sorted matrix ----
+5. LRU Cache ----
+6. Copy list with random pointer
+7. validate BST
+8. sorted array to BST
+9. Boundry traversal of Binary Tree
+10. Vertical Order traversal
+11. Number of Islands
+12. Trapping Rain Water ----
+13. Find All Numbers Disappeared in an Array ---- 
+14. Unique Email Addresses
+15. LFU Cache
+16. Valid Parentheses
+17. Word Break
+18. Remove Linked List Elements
+19. Coin Change
+20. Letter Combinations of a Phone Number
+21. Basic Calculator
+22. Longest Common Prefix
+23. Max Points on a Line
+24. Find All Numbers Disappeared in an Array
+25. Maximal Rectangle
+26. String to Integer
+27. First Missing Positive
+28. Generate Parentheses
+29. Encode and Decode TinyURL
